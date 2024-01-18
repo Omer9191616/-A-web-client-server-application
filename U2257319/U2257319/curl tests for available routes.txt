@@ -1,0 +1,23 @@
+# curl tests for available routes
+
+# Test search page
+curl -X GET http://localhost:3000/
+
+# Test adding a user
+curl -X POST -d "id=123&first_name=John&last_name=Doe&email=johndoe@example.com&phone=1234567890" http://localhost:3000/user/add
+
+# Test searching for a user
+curl -X POST -d "id=123" http://localhost:3000/user/search
+
+# Test updating a user
+curl -X PUT -d "first_name=Jane&last_name=Doe&email=janedoe@example.com&phone=9876543210" http://localhost:3000/user/update/123
+
+# Test deleting a user
+curl -X DELETE http://localhost:3000/user/delete/123
+
+# curl tests for unresponsive routes
+# Test misspelled route
+curl -X GET http://localhost:3000/userr/search
+
+# Test wrong access
+curl -X GET http://localhost:3000/user/searchh

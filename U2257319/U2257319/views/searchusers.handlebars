@@ -1,0 +1,21 @@
+<div class="container text-center">
+  <h1 style="margin-bottom: 18px;">Search Users</h1>
+  {{#if error}} <span>{{error}}</span>{{/if}}
+  <form class=" form-inline" method="POST" action="/user/search">
+    <div class="form-group">
+      <input type="text" name="id" class="form-control" placeholder="Search Users By ID">
+    </div>
+    <input type="submit" class="btn btn-primary" value="Search">
+  </form>
+
+  {{#if user}}
+  <a class="btn btn-warning" href="/user/update/{{user.id}}">Update User</a>
+  {{/if}}
+
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3" style="margin-top: 15px;">
+      <a href="/user/add" class="btn btn-success">Add User</a>
+      <a href="/users" class="btn btn-info">Show All Users</a>
+    </div>
+  </div>
+</div>

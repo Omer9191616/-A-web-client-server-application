@@ -1,0 +1,9 @@
+<h1>All Users</h1>
+{{#each users}}
+  <h2>{{this.first_name}} {{this.last_name}} [{{this.id}}]</h2>
+  <ul>
+    <li>Email: {{this.email}}</li>
+    <li>Phone: {{this.phone}}</li>
+  </ul>
+{{/each}}
+<a href="/">Back</a>
